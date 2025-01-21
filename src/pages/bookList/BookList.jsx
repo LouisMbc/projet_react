@@ -40,7 +40,22 @@ export const BookList = () => {
 
   return (
     <div className="container-fluid px-5 py-4">
-      <h2 className="text-center mb-5 display-4">Bibliothèque</h2>
+      <h2 
+        className="text-center mb-5" 
+        style={{
+          fontSize: '3.5rem',
+          fontWeight: 'bold',
+          background: 'linear-gradient(45deg, #2C3E50, #3498DB)',
+          WebkitBackgroundClip: 'text',
+          WebkitTextFillColor: 'transparent',
+          padding: '20px',
+          textShadow: '2px 4px 4px rgba(0,0,0,0.1)',
+          position: 'relative',
+          animation: 'titleFadeIn 1s ease-out'
+        }}
+      >
+        📚 Bibliothèque Harry Potter
+      </h2>
       <div className="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4">
         {books.map((book, index) => (
           <div 
