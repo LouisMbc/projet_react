@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './Contact.css';
 
 export const Contact = () => {
   const [formData, setFormData] = useState({
@@ -26,7 +27,7 @@ export const Contact = () => {
       <div className="container py-5">
         <div className="row justify-content-center">
           <div className="col-md-8">
-            <div className="alert alert-success shadow-sm" role="alert">
+            <div className="alert alert-success shadow-sm success-message" role="alert">
               <h4 className="alert-heading">Message envoyé !</h4>
               <p>Merci {formData.name} ! Votre message a bien été envoyé.</p>
               <hr />
@@ -39,18 +40,18 @@ export const Contact = () => {
   }
 
   return (
-    <div className="container-fluid px-5 py-4">
+    <div className="container-fluid px-5 py-4 contact-container">
       <div className="row justify-content-center">
         <div className="col-12 col-md-8 col-lg-6">
-          <div className="card shadow">
+          <div className="card contact-card">
             <div className="card-body p-5">
-              <h2 className="text-center mb-4">Contactez-nous</h2>
+              <h2 className="text-center mb-4 contact-title">Contactez-nous</h2>
               <form onSubmit={handleSubmit}>
                 <div className="mb-4">
                   <label className="form-label">Nom</label>
                   <input
                     type="text"
-                    className="form-control form-control-lg"
+                    className="form-control form-control-lg contact-input"
                     name="name"
                     required
                     value={formData.name}
@@ -62,7 +63,7 @@ export const Contact = () => {
                   <label className="form-label">Email</label>
                   <input
                     type="email"
-                    className="form-control form-control-lg"
+                    className="form-control form-control-lg contact-input"
                     name="email"
                     required
                     value={formData.email}
@@ -73,7 +74,7 @@ export const Contact = () => {
                 <div className="mb-4">
                   <label className="form-label">Message</label>
                   <textarea
-                    className="form-control form-control-lg"
+                    className="form-control form-control-lg contact-input"
                     name="message"
                     rows="5"
                     required
@@ -83,7 +84,7 @@ export const Contact = () => {
                   />
                 </div>
                 <div className="d-grid">
-                  <button type="submit" className="btn btn-primary btn-lg">
+                  <button type="submit" className="btn btn-primary btn-lg contact-button">
                     Envoyer le message
                   </button>
                 </div>

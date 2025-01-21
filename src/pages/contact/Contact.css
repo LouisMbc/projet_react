@@ -1,0 +1,68 @@
+.contact-container {
+  animation: fadeIn 0.5s ease-out;
+}
+
+.contact-card {
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+  border: none;
+  transition: transform 0.3s ease;
+}
+
+.contact-card:hover {
+  transform: translateY(-5px);
+}
+
+.contact-title {
+  background: linear-gradient(45deg, #2C3E50, #3498DB);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.contact-input {
+  transition: all 0.3s ease;
+  border: 1px solid #e0e0e0;
+}
+
+.contact-input:focus {
+  box-shadow: 0 0 15px rgba(52, 152, 219, 0.1);
+  border-color: #3498DB;
+}
+
+.contact-button {
+  background: linear-gradient(45deg, #2C3E50, #3498DB);
+  border: none;
+  transition: transform 0.3s ease;
+}
+
+.contact-button:hover {
+  transform: translateY(-2px);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.success-message {
+  animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
