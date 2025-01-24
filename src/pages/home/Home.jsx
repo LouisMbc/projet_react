@@ -1,7 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router';
+import { useAuth } from '../../auth/AuthProvider.jsx';
 
 export const Home = () => {
+  const { user } = useAuth();
+
   return (
     <div className="container-fluid px-5 py-4 w-100">
       <div className="jumbotron text-center p-5 rounded w-100 mb-5" 
@@ -65,19 +68,21 @@ export const Home = () => {
         </div>
 
         <div className="position-absolute top-50 start-50 translate-middle z-index-2 text-center">
-          <Link 
-            to="/login" 
-            className="btn btn-primary btn-lg fw-bold px-4 py-3 rounded-pill"
-            style={{
-              backgroundColor: 'rgba(180, 207, 247, 0.31)',
-              boxShadow: '0 4px 15px rgba(0,0,0,0.2)',
-              transition: 'all 0.3s ease'
-            }}
-            onMouseOver={(e) => e.target.style.transform = 'scale(1.05)'}
-            onMouseOut={(e) => e.target.style.transform = 'scale(1)'}
-          >
-            Connectez-vous pour voir nos livres 📚
-          </Link>
+          {!user && (
+            <Link 
+              to="/login" 
+              className="btn btn-primary btn-lg fw-bold px-4 py-3 rounded-pill"
+              style={{
+                backgroundColor: 'rgba(180, 207, 247, 0.31)',
+                boxShadow: '0 4px 15px rgba(0,0,0,0.2)',
+                transition: 'all 0.3s ease'
+              }}
+              onMouseOver={(e) => e.target.style.transform = 'scale(1.05)'}
+              onMouseOut={(e) => e.target.style.transform = 'scale(1)'}
+            >
+              Connectez-vous pour voir nos livres 📚
+            </Link>
+          )}
         </div>
         
         <button className="carousel-control-prev" type="button" data-bs-target="#bookCarousel" data-bs-slide="prev">
